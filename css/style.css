@@ -1069,8 +1069,15 @@ textarea:focus-visible {
   align-items: center;
   box-shadow: 0 4px 32px rgba(0,0,0,0.6);
   /* contain the absolute accent bar */
-  position: sticky;
   isolation: isolate;
+  width: 100%;
+}
+
+/* Ensure the container inside the header fills full width */
+.site-header > .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 /* Left red accent bar */
@@ -1254,6 +1261,10 @@ textarea:focus-visible {
     position: sticky;
     top: 0;
   }
+  .site-header > .container {
+    padding: 0;
+    width: 100%;
+  }
   .site-header__inner {
     display: flex;
     align-items: center;
@@ -1323,6 +1334,7 @@ textarea:focus-visible {
   :root { --header-h: 56px; }
 
   .container { padding: 0 16px; }
+  .site-header > .container { padding: 0; }
   .site-header__inner { padding: 0 14px; }
   .logo__img { height: 30px; }
 
@@ -1335,6 +1347,7 @@ textarea:focus-visible {
 @media (max-width: 360px) {
   :root { --header-h: 52px; }
   .logo__img { height: 26px; }
+  .site-header > .container { padding: 0; }
   .site-header__inner { padding: 0 12px; }
 }
 
