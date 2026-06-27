@@ -31,21 +31,27 @@
     <div class="site-header__inner">
       <a href="index.html" class="logo" aria-label="Frontline Restoration — Home">
         <div class="logo__mark">
-          <img src="images/logo.png" alt="Frontline Restoration" width="64" height="64">
+          <img src="images/logo.png" alt="" width="48" height="48" aria-hidden="true">
+        </div>
+        <div class="logo__text">
+          <div class="logo__primary">FRONTLINE<span>.</span></div>
+          <div class="logo__secondary">Restoration LLC</div>
         </div>
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="water-damage.html" class="nav__link">Water</a>
-        <a href="fire-damage.html" class="nav__link">Fire</a>
-        <a href="mold-remediation.html" class="nav__link">Mold</a>
-        <a href="odor-removal.html" class="nav__link">Odor</a>
-        <a href="roof-tarps.html" class="nav__link">Tarps</a>
-        <a href="catastrophe-response.html" class="nav__link">Catastrophe</a>
+        <div class="nav__services-group">
+          <a href="water-damage.html" class="nav__link">Water</a>
+          <a href="fire-damage.html" class="nav__link">Fire</a>
+          <a href="mold-remediation.html" class="nav__link">Mold</a>
+          <a href="odor-removal.html" class="nav__link">Odor</a>
+          <a href="roof-tarps.html" class="nav__link">Tarps</a>
+          <a href="catastrophe-response.html" class="nav__link">Catastrophe</a>
+        </div>
+        <div class="nav__divider" aria-hidden="true"></div>
         <a href="news.html" class="nav__link">News</a>
         <a href="contact.html" class="nav__link">Contact</a>
         <a href="tel:3055425253" class="btn btn--primary nav__cta" aria-label="Call now for emergency service">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
           Call Now
         </a>
       </nav>
@@ -80,8 +86,8 @@
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" aria-label="Frontline Restoration home">
-          <img src="images/logo.png" alt="Frontline Restoration" width="64" height="64">
+        <a href="index.html" aria-label="Frontline Restoration home" class="footer__logo-link">
+          <img src="images/logo-full.png" alt="Frontline Restoration" width="200" height="45">
         </a>
         <p>South Florida's trusted emergency restoration specialists. Water, fire, mold, odor, tarps &amp; catastrophe response — available 24/7.</p>
         <nav class="footer__socials" aria-label="Social links">

@@ -24,7 +24,7 @@
   --radius: 4px;
   --transition: 0.22s ease;
   --max-w: 1180px;
-  --header-h: 80px;
+  --header-h: 72px;
 }
 
 /* ── Reset ── */
@@ -1301,56 +1301,104 @@ body.ada-grayscale { filter: grayscale(1); }
 }
 
 /* ══════════════════════════════════════════════
-   HEADER & LOGO — refined
+   HEADER & LOGO — restructured
 ══════════════════════════════════════════════ */
 
-/* Logo: image only, no text, larger presence */
-.logo__text { display: none; }
+/* Logo: icon + wordmark side by side */
 .logo {
   padding: 0;
-  gap: 0;
-}
-.logo__mark {
-  width: 64px;
-  height: 64px;
-  display: flex;
+  gap: 12px;
   align-items: center;
 }
+.logo__mark {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
 .logo__mark img {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(200,40,31,0.25));
+  filter: drop-shadow(0 2px 10px rgba(200,40,31,0.3));
   transition: filter 0.2s ease;
 }
 .logo:hover .logo__mark img {
-  filter: drop-shadow(0 4px 14px rgba(200,40,31,0.45));
+  filter: drop-shadow(0 4px 16px rgba(200,40,31,0.55));
+}
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.logo__primary {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.logo__primary span {
+  color: var(--red);
+}
+.logo__secondary {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 3px;
 }
 
-/* Header: tighter, sharper */
+/* Header: stronger presence */
 .site-header {
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 6px 28px rgba(0,0,0,0.45);
 }
 .site-header__inner {
   padding: 0 4px;
 }
 
-/* Nav links: cleaner spacing, sharper active */
+/* Nav layout: service links grouped, then utility */
+.nav {
+  align-items: center;
+  gap: 2px;
+}
+.nav__services-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border-right: 1px solid var(--border);
+  padding-right: 10px;
+  margin-right: 6px;
+}
+.nav__divider {
+  display: none;
+}
+
+/* Nav links */
 .nav__link {
-  padding: 6px 10px;
+  padding: 7px 10px;
   font-size: 0.82rem;
   border-radius: 3px;
   position: relative;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 .nav__link.active {
-  color: var(--red);
+  color: var(--white);
+  background: rgba(200,40,31,0.12);
 }
 .nav__link.active::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 10px;
-  right: 10px;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
   height: 2px;
   background: var(--red);
   border-radius: 1px;
@@ -1360,16 +1408,31 @@ body.ada-grayscale { filter: grayscale(1); }
   color: var(--white);
 }
 .nav__cta {
-  margin-left: 16px;
+  margin-left: 14px;
   padding: 10px 22px;
-  font-size: 0.82rem;
+  font-size: 0.83rem;
+  letter-spacing: 0.06em;
   border-radius: 3px;
+  box-shadow: 0 2px 12px rgba(200,40,31,0.35);
+}
+.nav__cta:hover {
+  box-shadow: 0 4px 20px rgba(200,40,31,0.5);
 }
 
-/* Footer logo */
-.footer__brand > a img {
-  width: 60px;
-  height: 60px;
+/* Footer logo — wide horizontal version */
+.footer__logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+.footer__logo-link img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1.05);
+  opacity: 0.95;
+}
+.footer__logo-link:hover img {
+  opacity: 1;
 }
 
 /* Stat bar uses brand red, slightly darker now */
@@ -1549,8 +1612,10 @@ h2 { letter-spacing: 0.005em; }
 
 /* ── Mobile refinements ── */
 @media (max-width: 768px) {
-  .logo__mark { width: 54px; height: 54px; }
-  .logo__mark img { width: 54px; height: 54px; }
+  .logo__mark { width: 40px; height: 40px; }
+  .logo__mark img { width: 40px; height: 40px; }
+  .logo__primary { font-size: 1.2rem; }
+  .logo__secondary { font-size: 0.62rem; letter-spacing: 0.2em; }
   .page-hero { min-height: 42vh; }
   .quote-cta { padding: 80px 0; }
   .stat { padding: 24px 16px; }
