@@ -1251,48 +1251,76 @@ textarea:focus-visible {
 @media (max-width: 768px) {
   :root { --header-h: 60px; }
 
-  /* === TOPBAR — hide entirely on mobile === */
-  .topbar { display: none; }
+  /* === TOPBAR — completely gone on mobile === */
+  .topbar { display: none !important; }
 
-  /* === HEADER — clean single row: logo | burger === */
-  .header__accent  { display: none; }
+  /* === HEADER — single row: logo left | burger right === */
+  .header__accent { display: none; }
+
   .site-header {
-    height: var(--header-h);
     position: sticky;
     top: 0;
-  }
-  .site-header > .container {
-    padding: 0;
+    height: var(--header-h);
+    min-height: var(--header-h);
+    display: flex;
+    align-items: center;
     width: 100%;
+    overflow: hidden;
   }
+
+  /* Container stretches full width, same height as header */
+  .site-header > .container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  /* Inner row — logo on left, burger on right */
   .site-header__inner {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap;
     gap: 0;
     padding: 0 16px;
-    width: 100%;
   }
-  .logo__img { height: 34px; width: auto; }
 
-  /* Desktop nav + CTA pill — completely hidden */
-  .nav        { display: none !important; }
-  .nav__cta-wrap { display: none !important; }
+  .logo { flex-shrink: 0; }
+  .logo__img { height: 34px; width: auto; max-width: 160px; }
 
-  /* Burger — visible */
+  /* Desktop nav + CTA pill — completely hidden, no space taken */
+  .nav,
+  .nav__link,
+  .nav__cta-wrap { display: none !important; visibility: hidden !important; width: 0 !important; overflow: hidden !important; }
+
+  /* Burger — visible and right-aligned */
   .nav-toggle {
-    display: flex;
+    display: flex !important;
     flex-shrink: 0;
     margin-left: auto;
+    padding: 10px 8px;
   }
 
-  /* === MOBILE MENU === */
+  /* === MOBILE FULLSCREEN MENU === */
   .mobile-menu {
     top: var(--header-h);
-    padding: 24px 20px 48px;
+    padding: 32px 24px 64px;
+    border-top: 1px solid rgba(200,40,31,0.2);
   }
-  .mobile-menu__link  { font-size: 1.3rem; padding: 13px 0; }
-  .mobile-menu__cta   { margin-top: 24px; gap: 12px; }
+  .mobile-menu__link {
+    font-size: 1.5rem;
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-menu__cta   { margin-top: 28px; gap: 12px; }
   .mobile-menu__cta .btn { width: 100%; text-align: center; justify-content: center; font-size: 1rem; }
 
   /* === HERO === */
@@ -1334,9 +1362,9 @@ textarea:focus-visible {
   :root { --header-h: 56px; }
 
   .container { padding: 0 16px; }
-  .site-header > .container { padding: 0; }
+  .site-header > .container { padding: 0; max-width: 100%; }
   .site-header__inner { padding: 0 14px; }
-  .logo__img { height: 30px; }
+  .logo__img { height: 30px; max-width: 140px; }
 
   .hero__content { padding: 40px 0 72px; }
   .stats-bar__inner { grid-template-columns: 1fr 1fr; }
@@ -1346,7 +1374,7 @@ textarea:focus-visible {
 
 @media (max-width: 360px) {
   :root { --header-h: 52px; }
-  .logo__img { height: 26px; }
+  .logo__img { height: 26px; max-width: 120px; }
   .site-header > .container { padding: 0; }
   .site-header__inner { padding: 0 12px; }
 }
