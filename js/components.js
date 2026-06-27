@@ -30,10 +30,8 @@
   <div class="container">
     <div class="site-header__inner">
       <a href="index.html" class="logo" aria-label="Frontline Restoration - Home">
-        <div class="logo__mark"><img src="images/logo.png" alt="" width="38" height="38" aria-hidden="true"></div>
-        <div class="logo__text">
-          <span class="logo__primary"><span>Frontline</span> Restoration</span>
-          <span class="logo__secondary">South Florida</span>
+        <div class="logo__mark">
+          <img src="images/logo.png" alt="Frontline Restoration" width="56" height="56">
         </div>
       </a>
       <nav class="nav" aria-label="Primary navigation">
@@ -83,7 +81,7 @@
     <div class="footer__grid">
       <div class="footer__brand">
         <a href="index.html" aria-label="Frontline Restoration home">
-          <img src="images/logo.png" alt="Frontline Restoration" width="48" height="48">
+          <img src="images/logo.png" alt="Frontline Restoration" width="64" height="64">
         </a>
         <p>South Florida's trusted emergency restoration specialists. Water, fire, mold, odor, tarps &amp; catastrophe response — available 24/7.</p>
         <nav class="footer__socials" aria-label="Social links">

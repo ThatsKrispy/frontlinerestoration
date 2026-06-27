@@ -7,9 +7,9 @@
 
 /* ── Design Tokens ── */
 :root {
-  --red:        #E63027;
-  --red-dark:   #B8211A;
-  --red-glow:   rgba(230,48,39,0.18);
+  --red:        #C8281F;
+  --red-dark:   #A01F17;
+  --red-glow:   rgba(200,40,31,0.15);
   --bg:         #0D0D0D;
   --bg-card:    #161616;
   --bg-elevated:#1E1E1E;
@@ -128,7 +128,7 @@ p + p { margin-top: 16px; }
   background: var(--red-dark);
   border-color: var(--red-dark);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(230,48,39,0.35);
+  box-shadow: 0 8px 24px rgba(200,40,31,0.30);
 }
 .btn--outline {
   background: transparent;
@@ -315,13 +315,13 @@ p + p { margin-top: 16px; }
   font-size: 1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  box-shadow: 0 6px 28px rgba(230,48,39,0.55);
+  box-shadow: 0 6px 28px rgba(200,40,31,0.50);
   transition: all var(--transition);
 }
 .emergency-cta__btn:hover {
   background: var(--red-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 36px rgba(230,48,39,0.65);
+  box-shadow: 0 10px 36px rgba(200,40,31,0.60);
 }
 .emergency-cta__pulse {
   display: inline-block;
@@ -418,7 +418,7 @@ p + p { margin-top: 16px; }
 
 /* ── Stats Bar ── */
 .stats-bar {
-  background: var(--red);
+  background: #B8221A;
   padding: 0;
 }
 .stats-bar__inner {
@@ -1298,4 +1298,49 @@ body.ada-grayscale { filter: grayscale(1); }
 @media (max-width: 768px) {
   #ada-widget-btn { bottom: 86px; right: 16px; }
   #ada-panel { right: 16px; bottom: 146px; width: calc(100vw - 32px); max-width: 280px; }
+}
+
+/* ══════════════════════════════════════════════
+   LOGO REFRESH — image-only, no text, larger
+══════════════════════════════════════════════ */
+
+/* Remove text from header logo, show only the mark — larger */
+.logo__text { display: none; }
+.logo__mark {
+  width: 56px;
+  height: 56px;
+}
+.logo__mark img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+/* Give the logo link a bit more breathing room */
+.logo {
+  padding: 4px 0;
+}
+
+/* Topbar logo (if shown anywhere) — hide text version */
+.footer__brand > a img {
+  width: 56px;
+  height: 56px;
+}
+
+/* Stat bar uses brand red, slightly darker now */
+.stats-bar {
+  background: #B8221A;
+}
+
+/* Tone down the CTA band / quote-cta glow */
+.quote-cta::before {
+  background: radial-gradient(ellipse at center, rgba(200,40,31,0.10) 0%, transparent 70%);
+}
+
+/* Softer emergency CTA shadow */
+.emergency-cta__btn {
+  box-shadow: 0 6px 24px rgba(200,40,31,0.45);
+}
+.emergency-cta__btn:hover {
+  box-shadow: 0 10px 32px rgba(200,40,31,0.55);
 }
