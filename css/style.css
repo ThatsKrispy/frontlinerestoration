@@ -24,7 +24,7 @@
   --radius: 4px;
   --transition: 0.22s ease;
   --max-w: 1180px;
-  --header-h: 72px;
+  --header-h: 80px;
 }
 
 /* ── Reset ── */
@@ -1089,7 +1089,7 @@ textarea:focus-visible {
 }
 
 @media (max-width: 768px) {
-  :root { --header-h: 64px; }
+  :root { --header-h: 68px; }
   .nav { display: none; }
   .nav-toggle { display: flex; }
   .why-grid { grid-template-columns: 1fr; }
@@ -1301,30 +1301,75 @@ body.ada-grayscale { filter: grayscale(1); }
 }
 
 /* ══════════════════════════════════════════════
-   LOGO REFRESH — image-only, no text, larger
+   HEADER & LOGO — refined
 ══════════════════════════════════════════════ */
 
-/* Remove text from header logo, show only the mark — larger */
+/* Logo: image only, no text, larger presence */
 .logo__text { display: none; }
+.logo {
+  padding: 0;
+  gap: 0;
+}
 .logo__mark {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
 }
 .logo__mark img {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(200,40,31,0.25));
+  transition: filter 0.2s ease;
+}
+.logo:hover .logo__mark img {
+  filter: drop-shadow(0 4px 14px rgba(200,40,31,0.45));
 }
 
-/* Give the logo link a bit more breathing room */
-.logo {
-  padding: 4px 0;
+/* Header: tighter, sharper */
+.site-header {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.site-header__inner {
+  padding: 0 4px;
 }
 
-/* Topbar logo (if shown anywhere) — hide text version */
+/* Nav links: cleaner spacing, sharper active */
+.nav__link {
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  border-radius: 3px;
+  position: relative;
+}
+.nav__link.active {
+  color: var(--red);
+}
+.nav__link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: var(--red);
+  border-radius: 1px;
+}
+.nav__link:hover:not(.active) {
+  background: rgba(255,255,255,0.05);
+  color: var(--white);
+}
+.nav__cta {
+  margin-left: 16px;
+  padding: 10px 22px;
+  font-size: 0.82rem;
+  border-radius: 3px;
+}
+
+/* Footer logo */
 .footer__brand > a img {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
 }
 
 /* Stat bar uses brand red, slightly darker now */
@@ -1343,4 +1388,171 @@ body.ada-grayscale { filter: grayscale(1); }
 }
 .emergency-cta__btn:hover {
   box-shadow: 0 10px 32px rgba(200,40,31,0.55);
+}
+
+/* ══════════════════════════════════════════════
+   LOOK & FEEL POLISH
+══════════════════════════════════════════════ */
+
+/* ── Topbar: slimmer, more refined ── */
+.topbar {
+  padding: 7px 0;
+  font-size: 0.78rem;
+}
+.topbar__item {
+  letter-spacing: 0.02em;
+}
+.topbar__socials a {
+  width: 26px;
+  height: 26px;
+  border-radius: 3px;
+}
+
+/* ── Header: cleaner separation from content ── */
+.site-header {
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 4px 20px rgba(0,0,0,0.35);
+}
+
+/* ── Why cards: tighter, more premium ── */
+.why-card {
+  padding: 36px 28px;
+}
+.why-card h3 {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+.why-card__icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
+
+/* ── Feature cards: consistent sizing ── */
+.feature-card {
+  padding: 28px 24px;
+}
+.feature-card h4 {
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+/* ── Service cards: better hover ── */
+.service-card__title {
+  font-size: 1.25rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+.service-card__body {
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  padding: 32px 24px 24px;
+}
+
+/* ── Section headings: sharper ── */
+h2 { letter-spacing: 0.005em; }
+.eyebrow { letter-spacing: 0.22em; }
+.divider { width: 40px; height: 2px; }
+
+/* ── Buttons: slightly more refined ── */
+.btn {
+  letter-spacing: 0.08em;
+  border-radius: 3px;
+}
+.btn--primary {
+  background: var(--red);
+  border-color: var(--red);
+}
+.btn--primary:hover {
+  background: #A01F17;
+  border-color: #A01F17;
+  box-shadow: 0 6px 20px rgba(200,40,31,0.30);
+}
+.btn--outline {
+  border-color: rgba(255,255,255,0.25);
+}
+.btn--outline:hover {
+  border-color: var(--red);
+  background: rgba(200,40,31,0.08);
+  color: var(--white);
+}
+
+/* ── Contact info cards: cleaner ── */
+.contact-info-card {
+  padding: 24px;
+  gap: 16px;
+}
+.contact-info-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+}
+.contact-info-card h4 {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  margin-bottom: 4px;
+}
+
+/* ── Form: cleaner inputs ── */
+.form__input,
+.form__select,
+.form__textarea {
+  border-radius: 3px;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.1);
+}
+.form__input:focus,
+.form__select:focus,
+.form__textarea:focus {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--red);
+}
+.form__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 6px;
+}
+
+/* ── Page hero: larger min-height, better text placement ── */
+.page-hero { min-height: 48vh; }
+
+/* ── Process steps: cleaner ── */
+.process-step { padding: 28px 0; }
+.process-step__num {
+  font-size: 1.6rem;
+  opacity: 0.35;
+  min-width: 52px;
+}
+
+/* ── Stats bar: more breathing room ── */
+.stat { padding: 32px 24px; }
+.stat__number { font-size: 2.4rem; margin-bottom: 6px; }
+.stat__label { font-size: 0.72rem; letter-spacing: 0.14em; }
+
+/* ── CTA quote section: stronger presence ── */
+.quote-cta { padding: 112px 0; }
+.quote-cta h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+.quote-cta__desc { font-size: 1.05rem; margin-bottom: 44px; }
+
+/* ── Footer: cleaner ── */
+.footer { padding: 80px 0 0; }
+.footer__col h5 {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  margin-bottom: 18px;
+}
+.footer__col ul { gap: 8px; }
+.footer__col ul li a { font-size: 0.86rem; }
+.footer__contact-item { font-size: 0.86rem; margin-bottom: 10px; }
+.footer__bottom { padding: 18px 0; }
+.footer__bottom p { font-size: 0.78rem; }
+
+/* ── Mobile refinements ── */
+@media (max-width: 768px) {
+  .logo__mark { width: 54px; height: 54px; }
+  .logo__mark img { width: 54px; height: 54px; }
+  .page-hero { min-height: 42vh; }
+  .quote-cta { padding: 80px 0; }
+  .stat { padding: 24px 16px; }
+  .stat__number { font-size: 1.9rem; }
 }

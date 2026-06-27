@@ -29,9 +29,9 @@
 <header class="site-header" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="site-header__inner">
-      <a href="index.html" class="logo" aria-label="Frontline Restoration - Home">
+      <a href="index.html" class="logo" aria-label="Frontline Restoration — Home">
         <div class="logo__mark">
-          <img src="images/logo.png" alt="Frontline Restoration" width="56" height="56">
+          <img src="images/logo.png" alt="Frontline Restoration" width="64" height="64">
         </div>
       </a>
       <nav class="nav" aria-label="Primary navigation">
