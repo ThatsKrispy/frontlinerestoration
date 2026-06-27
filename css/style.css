@@ -29,13 +29,14 @@
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body {
   font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
   line-height: 1.65;
   overflow-x: hidden;
+  width: 100%;
 }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
@@ -1089,32 +1090,69 @@ textarea:focus-visible {
 }
 
 @media (max-width: 768px) {
-  :root { --header-h: 68px; }
+  :root { --header-h: 64px; }
+
+  /* === TOPBAR === */
+  .topbar { padding: 5px 0; }
+  .topbar__badge { display: none; }
+  .topbar__sep,
+  .topbar__sep ~ .topbar__item { display: none; }
+  .topbar__socials a { width: 22px; height: 22px; }
+
+  /* === HEADER === */
+  .header__accent { display: none; }
+  .site-header__inner { gap: 12px; padding: 0 4px; }
+  .logo__img { height: 32px; }
+
+  /* Desktop nav hidden — burger shows */
   .nav { display: none; }
   .nav-toggle { display: flex; }
+
+  /* === MOBILE MENU === */
+  .mobile-menu { padding: calc(var(--header-h) + 24px) 20px 40px; }
+  .mobile-menu__link { font-size: 1.4rem; padding: 12px 0; }
+
+  /* === HERO === */
+  .hero { min-height: 100svh; align-items: flex-end; }
+  .hero__content { padding: 48px 0 80px; }
+  .hero__h1 { font-size: clamp(2.2rem, 10vw, 3.8rem); }
+  .hero__desc { font-size: 1rem; margin-bottom: 32px; }
+  .hero__actions { flex-direction: column; gap: 10px; }
+  .hero__actions .btn { width: 100%; text-align: center; justify-content: center; }
+  .hero__scroll { display: none; }
+
+  /* === STATS BAR === */
+  .stats-bar__inner { grid-template-columns: 1fr 1fr; }
+  .stat { padding: 20px 12px; }
+  .stat__number { font-size: 1.8rem; }
+
+  /* === SECTIONS === */
+  .section { padding: 56px 0; }
   .why-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
+  .feature-grid { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr; }
-  .stats-bar__inner { grid-template-columns: repeat(2, 1fr); }
-  .feature-grid { grid-template-columns: 1fr 1fr; }
-  .section { padding: 64px 0; }
-  .photo-slider__slide { flex: 0 0 calc(50% - 2px); }
+  .news-grid { grid-template-columns: 1fr; }
   .cta-band__inner { flex-direction: column; text-align: center; }
   .cta-band__actions { justify-content: center; }
-  .news-grid { grid-template-columns: 1fr; }
+  .photo-slider__slide { flex: 0 0 calc(85% - 2px); }
+
+  /* Emergency float btn */
   .emergency-cta__btn span { display: none; }
-  .emergency-cta__btn { border-radius: 50%; width: 58px; height: 58px; padding: 0; justify-content: center; }
-  .topbar__badge { display: none; }
-  .topbar__sep ~ .topbar__item { display: none; }
+  .emergency-cta__btn { border-radius: 50%; width: 54px; height: 54px; padding: 0; justify-content: center; }
 }
 
 @media (max-width: 480px) {
-  .hero { min-height: 100svh; }
-  .hero__actions { flex-direction: column; }
-  .feature-grid { grid-template-columns: 1fr; }
+  :root { --header-h: 58px; }
+
+  .container { padding: 0 16px; }
+  .logo__img { height: 28px; }
+
+  .hero__content { padding: 40px 0 72px; }
   .stats-bar__inner { grid-template-columns: 1fr 1fr; }
-  .photo-slider__slide { flex: 0 0 calc(85% - 2px); }
+  .photo-slider__slide { flex: 0 0 calc(88% - 2px); }
+  .section { padding: 48px 0; }
 }
 
 /* ══════════════════════════════════════════════
@@ -1383,7 +1421,10 @@ body.ada-grayscale { filter: grayscale(1); }
   height: var(--header-h);
   display: flex;
   align-items: center;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.6), 0 0 0 0 rgba(200,40,31,0);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.6);
+  /* contain the absolute accent bar */
+  position: sticky;
+  isolation: isolate;
 }
 
 /* Left red accent bar */
@@ -1690,11 +1731,11 @@ h2 { letter-spacing: 0.005em; }
 .footer__bottom { padding: 18px 0; }
 .footer__bottom p { font-size: 0.78rem; }
 
-/* ── Mobile refinements ── */
+/* ── Mobile refinements (additional) ── */
 @media (max-width: 768px) {
-  .logo__img { height: 34px; }
+  .logo__img { height: 32px; }
   .page-hero { min-height: 42vh; }
-  .quote-cta { padding: 80px 0; }
-  .stat { padding: 24px 16px; }
-  .stat__number { font-size: 1.9rem; }
+  .quote-cta { padding: 64px 0; }
+  .stat { padding: 20px 12px; }
+  .stat__number { font-size: 1.8rem; }
 }
