@@ -5,62 +5,67 @@
 
   const headerHTML = `
 <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Slim utility strip -->
 <div class="topbar" role="banner">
-  <div class="container">
-    <div class="topbar__inner">
-      <div class="topbar__contact">
-        <a href="tel:3055425253" class="topbar__item" aria-label="Call us at (305) 542-5253">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-          (305) 542-5253
-        </a>
-        <a href="mailto:Hello@FrontlineRestoration.com" class="topbar__item" aria-label="Email us">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-          Hello@FrontlineRestoration.com
-        </a>
-      </div>
-      <nav class="topbar__socials" aria-label="Social media links">
-        <a href="https://www.instagram.com/frontlinerestorationllc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://www.facebook.com/frontlinerestorationllc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="https://www.linkedin.com/company/frontline-restoration-llc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+  <div class="topbar__inner container">
+    <div class="topbar__contact">
+      <a href="tel:3055425253" class="topbar__item" aria-label="Call (305) 542-5253">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        (305) 542-5253
+      </a>
+      <span class="topbar__sep" aria-hidden="true">|</span>
+      <a href="mailto:Hello@FrontlineRestoration.com" class="topbar__item" aria-label="Email us">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        Hello@FrontlineRestoration.com
+      </a>
+    </div>
+    <div class="topbar__right">
+      <span class="topbar__badge">24/7 Emergency Response</span>
+      <nav class="topbar__socials" aria-label="Social media">
+        <a href="https://www.instagram.com/frontlinerestorationllc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/frontlinerestorationllc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/frontline-restoration-llc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
       </nav>
     </div>
   </div>
 </div>
+
+<!-- Main header -->
 <header class="site-header" role="navigation" aria-label="Main navigation">
+  <!-- Red accent stripe on the left edge -->
+  <div class="header__accent" aria-hidden="true"></div>
   <div class="container">
     <div class="site-header__inner">
+
+      <!-- Logo only — no text -->
       <a href="index.html" class="logo" aria-label="Frontline Restoration — Home">
-        <div class="logo__mark">
-          <img src="images/logo.png" alt="" width="48" height="48" aria-hidden="true">
-        </div>
-        <div class="logo__text">
-          <div class="logo__primary">FRONTLINE<span>.</span></div>
-          <div class="logo__secondary">Restoration LLC</div>
-        </div>
+        <img src="images/logo-full.png" alt="Frontline Restoration" class="logo__img">
       </a>
+
+      <!-- Nav -->
       <nav class="nav" aria-label="Primary navigation">
-        <div class="nav__services-group">
-          <a href="water-damage.html" class="nav__link">Water</a>
-          <a href="fire-damage.html" class="nav__link">Fire</a>
-          <a href="mold-remediation.html" class="nav__link">Mold</a>
-          <a href="odor-removal.html" class="nav__link">Odor</a>
-          <a href="roof-tarps.html" class="nav__link">Tarps</a>
-          <a href="catastrophe-response.html" class="nav__link">Catastrophe</a>
-        </div>
-        <div class="nav__divider" aria-hidden="true"></div>
+        <a href="water-damage.html" class="nav__link">Water</a>
+        <a href="fire-damage.html" class="nav__link">Fire</a>
+        <a href="mold-remediation.html" class="nav__link">Mold</a>
+        <a href="odor-removal.html" class="nav__link">Odor</a>
+        <a href="roof-tarps.html" class="nav__link">Tarps</a>
+        <a href="catastrophe-response.html" class="nav__link">Catastrophe</a>
         <a href="news.html" class="nav__link">News</a>
         <a href="contact.html" class="nav__link">Contact</a>
-        <a href="tel:3055425253" class="btn btn--primary nav__cta" aria-label="Call now for emergency service">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-          Call Now
+        <a href="tel:3055425253" class="nav__cta-wrap" aria-label="Call now for 24/7 emergency service">
+          <span class="nav__cta-pulse" aria-hidden="true"></span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          <span class="nav__cta-text"><strong>(305) 542-5253</strong><small>CALL 24/7</small></span>
         </a>
       </nav>
+
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
-</header>
+</header>`;
 <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
   <a href="index.html" class="mobile-menu__link">Home</a>
   <a href="water-damage.html" class="mobile-menu__link">Water Damage</a>
