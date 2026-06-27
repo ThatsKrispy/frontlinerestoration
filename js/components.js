@@ -1,91 +1,77 @@
 /* ============================================================
    FRONTLINE RESTORATION — Shared Components
+   v5 — Clean header rewrite, mobile-first
    ============================================================ */
 (function () {
 
+  /* ── NEW HEADER HTML ─────────────────────────────────────── */
   const headerHTML = `
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- Slim utility strip -->
-<div class="topbar" role="banner">
-  <div class="topbar__inner container">
-    <div class="topbar__contact">
-      <a href="tel:3055425253" class="topbar__item" aria-label="Call (305) 542-5253">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-        (305) 542-5253
-      </a>
-      <span class="topbar__sep" aria-hidden="true">|</span>
-      <a href="mailto:Hello@FrontlineRestoration.com" class="topbar__item" aria-label="Email us">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-        Hello@FrontlineRestoration.com
-      </a>
-    </div>
-    <div class="topbar__right">
-      <span class="topbar__badge">24/7 Emergency Response</span>
-      <nav class="topbar__socials" aria-label="Social media">
-        <a href="https://www.instagram.com/frontlinerestorationllc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://www.facebook.com/frontlinerestorationllc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="https://www.linkedin.com/company/frontline-restoration-llc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-      </nav>
-    </div>
+<header class="fh" id="site-header">
+  <div class="fh__bar">
+
+    <a href="index.html" class="fh__logo" aria-label="Frontline Restoration — Home">
+      <img src="images/logo-full.png" alt="Frontline Restoration" width="180" height="40">
+    </a>
+
+    <nav class="fh__nav" aria-label="Primary navigation">
+      <a href="water-damage.html" class="fh__link">Water</a>
+      <a href="fire-damage.html" class="fh__link">Fire</a>
+      <a href="mold-remediation.html" class="fh__link">Mold</a>
+      <a href="odor-removal.html" class="fh__link">Odor</a>
+      <a href="roof-tarps.html" class="fh__link">Tarps</a>
+      <a href="catastrophe-response.html" class="fh__link">Catastrophe</a>
+      <a href="news.html" class="fh__link">News</a>
+      <a href="contact.html" class="fh__link">Contact</a>
+    </nav>
+
+    <a href="tel:3055425253" class="fh__cta" aria-label="Call (305) 542-5253 for 24/7 emergency service">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+      <span>(305) 542-5253</span>
+    </a>
+
+    <button class="fh__burger" id="fh-burger"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="fh-drawer">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="fh__drawer" id="fh-drawer" aria-hidden="true">
+  <nav aria-label="Mobile navigation">
+    <a href="index.html" class="fh__drawer-link">Home</a>
+    <a href="water-damage.html" class="fh__drawer-link">Water Damage</a>
+    <a href="fire-damage.html" class="fh__drawer-link">Fire Damage</a>
+    <a href="mold-remediation.html" class="fh__drawer-link">Mold Remediation</a>
+    <a href="odor-removal.html" class="fh__drawer-link">Odor Removal</a>
+    <a href="roof-tarps.html" class="fh__drawer-link">Roof Tarps</a>
+    <a href="catastrophe-response.html" class="fh__drawer-link">Catastrophe Response</a>
+    <a href="news.html" class="fh__drawer-link">News</a>
+    <a href="contact.html" class="fh__drawer-link">Contact</a>
+  </nav>
+  <div class="fh__drawer-cta">
+    <a href="tel:3055425253" class="btn btn--primary btn--lg">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+      Call (305) 542-5253
+    </a>
+    <a href="contact.html" class="btn btn--outline btn--lg">Free Quote</a>
+  </div>
+  <div class="fh__drawer-info">
+    <a href="mailto:Hello@FrontlineRestoration.com">Hello@FrontlineRestoration.com</a>
+    <span>14313 SW 142nd St, Miami, FL 33186</span>
+    <span>Available 24/7</span>
   </div>
 </div>
 
-<!-- Main header -->
-<header class="site-header" role="navigation" aria-label="Main navigation">
-  <!-- Red accent stripe on the left edge -->
-  <div class="header__accent" aria-hidden="true"></div>
-  <div class="container">
-    <div class="site-header__inner">
+<div class="fh__overlay" id="fh-overlay" aria-hidden="true"></div>`;
 
-      <!-- Logo only — no text -->
-      <a href="index.html" class="logo" aria-label="Frontline Restoration — Home">
-        <img src="images/logo-full.png" alt="Frontline Restoration" class="logo__img">
-      </a>
-
-      <!-- Nav -->
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="water-damage.html" class="nav__link">Water</a>
-        <a href="fire-damage.html" class="nav__link">Fire</a>
-        <a href="mold-remediation.html" class="nav__link">Mold</a>
-        <a href="odor-removal.html" class="nav__link">Odor</a>
-        <a href="roof-tarps.html" class="nav__link">Tarps</a>
-        <a href="catastrophe-response.html" class="nav__link">Catastrophe</a>
-        <a href="news.html" class="nav__link">News</a>
-        <a href="contact.html" class="nav__link">Contact</a>
-        <a href="tel:3055425253" class="nav__cta-wrap" aria-label="Call now for 24/7 emergency service">
-          <span class="nav__cta-pulse" aria-hidden="true"></span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-          <span class="nav__cta-text"><strong>(305) 542-5253</strong><small>CALL 24/7</small></span>
-        </a>
-      </nav>
-
-      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-  <a href="index.html" class="mobile-menu__link">Home</a>
-  <a href="water-damage.html" class="mobile-menu__link">Water Damage</a>
-  <a href="fire-damage.html" class="mobile-menu__link">Fire Damage</a>
-  <a href="mold-remediation.html" class="mobile-menu__link">Mold Remediation</a>
-  <a href="odor-removal.html" class="mobile-menu__link">Odor Removal</a>
-  <a href="roof-tarps.html" class="mobile-menu__link">Roof Tarps</a>
-  <a href="catastrophe-response.html" class="mobile-menu__link">Catastrophe Response</a>
-  <a href="news.html" class="mobile-menu__link">News</a>
-  <a href="contact.html" class="mobile-menu__link">Contact</a>
-  <div class="mobile-menu__cta">
-    <a href="tel:3055425253" class="btn btn--primary btn--lg">Call (305) 542-5253</a>
-    <a href="contact.html" class="btn btn--outline btn--lg">Get Free Quote</a>
-  </div>
-  <div class="mobile-menu__info">
-    <a href="mailto:Hello@FrontlineRestoration.com">Hello@FrontlineRestoration.com</a>
-    <span style="color:var(--text-muted);font-size:0.84rem;">14313 SW 142nd St, Miami, FL 33186</span>
-  </div>
-</nav>`;
-
+  /* ── FOOTER HTML (unchanged) ─────────────────────────────── */
   const footerHTML = `
 <footer class="footer" role="contentinfo">
   <div class="container">
@@ -140,7 +126,6 @@
   </div>
 </footer>
 
-<!-- Emergency Sticky CTA -->
 <div class="emergency-cta" role="complementary" aria-label="Emergency contact">
   <a href="tel:3055425253" class="emergency-cta__btn" aria-label="Call now 24/7: (305) 542-5253">
     <span class="emergency-cta__pulse" aria-hidden="true"></span>
@@ -149,9 +134,6 @@
   </a>
 </div>
 
-<!-- ══════════════════════════════════════════════
-     CONSENT MANAGEMENT (GDPR/CCPA compliant)
-══════════════════════════════════════════════ -->
 <div class="consent-banner" id="consent-banner" role="dialog" aria-modal="true"
      aria-labelledby="consent-title" aria-describedby="consent-desc">
   <div class="consent-banner__inner">
@@ -165,7 +147,6 @@
       <button class="consent-btn consent-btn--accept" id="consent-accept">Accept All</button>
     </div>
   </div>
-  <!-- Expandable detail panel -->
   <div class="consent-details" id="consent-details" hidden>
     <div class="consent-details__inner container">
       <div class="consent-toggle-row">
@@ -192,6 +173,7 @@
   </div>
 </div>`;
 
+  /* ── INJECT ──────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     const hi = document.getElementById('site-header-inject');
     if (hi) hi.innerHTML = headerHTML;
@@ -199,5 +181,51 @@
     if (fi) fi.innerHTML = footerHTML;
     const yr = document.getElementById('footer-year');
     if (yr) yr.textContent = new Date().getFullYear();
+
+    /* ── Burger / Drawer toggle ─────────────────────────── */
+    const burger  = document.getElementById('fh-burger');
+    const drawer  = document.getElementById('fh-drawer');
+    const overlay = document.getElementById('fh-overlay');
+
+    function openDrawer() {
+      drawer.classList.add('fh__drawer--open');
+      overlay.classList.add('fh__overlay--show');
+      burger.setAttribute('aria-expanded', 'true');
+      burger.setAttribute('aria-label', 'Close navigation menu');
+      drawer.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('fh__drawer--open');
+      overlay.classList.remove('fh__overlay--show');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open navigation menu');
+      drawer.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (burger && drawer && overlay) {
+      burger.addEventListener('click', () => {
+        drawer.classList.contains('fh__drawer--open') ? closeDrawer() : openDrawer();
+      });
+      overlay.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeDrawer();
+      });
+    }
+
+    /* ── Active link highlight ──────────────────────────── */
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.fh__link, .fh__drawer-link').forEach(a => {
+      if (a.getAttribute('href') === page) {
+        a.classList.add('active');
+        a.setAttribute('aria-current', 'page');
+      }
+    });
   });
+
 })();

@@ -5,41 +5,9 @@
 (function () {
   'use strict';
 
-  /* ── Mobile Menu ── */
-  const toggle  = document.getElementById('nav-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  if (toggle && mobileMenu) {
-    toggle.addEventListener('click', () => {
-      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isOpen));
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = isOpen ? '' : 'hidden';
-    });
-
-    // Close on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.setAttribute('aria-expanded', 'false');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // Close on ESC
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-        toggle.setAttribute('aria-expanded', 'false');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-        toggle.focus();
-      }
-    });
-  }
-
   /* ── Active Nav Link ── */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__link, .mobile-menu__link').forEach(link => {
+  document.querySelectorAll('.fh__link, .fh__drawer-link').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
@@ -168,21 +136,5 @@
     counters.forEach(c => cObs.observe(c));
   }
 
-  /* ── Trap focus in mobile menu for accessibility ── */
-  if (mobileMenu) {
-    mobileMenu.addEventListener('keydown', e => {
-      if (!mobileMenu.classList.contains('open')) return;
-      const focusable = mobileMenu.querySelectorAll('a, button, [tabindex="0"]');
-      const first = focusable[0];
-      const last  = focusable[focusable.length - 1];
-      if (e.key === 'Tab') {
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault(); last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault(); first.focus();
-        }
-      }
-    });
-  }
 
 })();
