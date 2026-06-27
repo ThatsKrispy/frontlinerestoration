@@ -378,15 +378,6 @@ p + p { margin-top: 16px; }
   transition: background var(--transition);
 }
 .why-card:hover { background: var(--bg-elevated); }
-.why-card__num {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--red);
-  margin-bottom: 20px;
-  display: block;
-}
 .why-card__icon {
   width: 44px; height: 44px;
   margin-bottom: 20px;
