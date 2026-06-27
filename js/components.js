@@ -65,7 +65,7 @@
       </button>
     </div>
   </div>
-</header>`;
+</header>
 <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
   <a href="index.html" class="mobile-menu__link">Home</a>
   <a href="water-damage.html" class="mobile-menu__link">Water Damage</a>
