@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects
+/home    /index.html   301
+/water   /water-damage.html   301
+/fire    /fire-damage.html    301
+/mold    /mold-remediation.html   301
+/odor    /odor-removal.html   301
+/tarps   /roof-tarps.html     301
+/catastrophe  /catastrophe-response.html  301
