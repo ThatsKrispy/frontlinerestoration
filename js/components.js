@@ -1,11 +1,4 @@
-/* ============================================================
-   FRONTLINE RESTORATION — Shared Components
-   v5 — Clean header rewrite, mobile-first
-   ============================================================ */
-(function () {
-
-  /* ── NEW HEADER HTML ─────────────────────────────────────── */
-  const headerHTML = `
+(function(){const headerHTML=`
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="fh" id="site-header">
@@ -69,10 +62,7 @@
   </div>
 </div>
 
-<div class="fh__overlay" id="fh-overlay" aria-hidden="true"></div>`;
-
-  /* ── FOOTER HTML (unchanged) ─────────────────────────────── */
-  const footerHTML = `
+<div class="fh__overlay" id="fh-overlay" aria-hidden="true"></div>`;const footerHTML=`
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer__grid">
@@ -171,61 +161,7 @@
       </div>
     </div>
   </div>
-</div>`;
-
-  /* ── INJECT ──────────────────────────────────────────────── */
-  document.addEventListener('DOMContentLoaded', function () {
-    const hi = document.getElementById('site-header-inject');
-    if (hi) hi.innerHTML = headerHTML;
-    const fi = document.getElementById('site-footer-inject');
-    if (fi) fi.innerHTML = footerHTML;
-    const yr = document.getElementById('footer-year');
-    if (yr) yr.textContent = new Date().getFullYear();
-
-    /* ── Burger / Drawer toggle ─────────────────────────── */
-    const burger  = document.getElementById('fh-burger');
-    const drawer  = document.getElementById('fh-drawer');
-    const overlay = document.getElementById('fh-overlay');
-
-    function openDrawer() {
-      drawer.classList.add('fh__drawer--open');
-      overlay.classList.add('fh__overlay--show');
-      burger.setAttribute('aria-expanded', 'true');
-      burger.setAttribute('aria-label', 'Close navigation menu');
-      drawer.setAttribute('aria-hidden', 'false');
-      overlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeDrawer() {
-      drawer.classList.remove('fh__drawer--open');
-      overlay.classList.remove('fh__overlay--show');
-      burger.setAttribute('aria-expanded', 'false');
-      burger.setAttribute('aria-label', 'Open navigation menu');
-      drawer.setAttribute('aria-hidden', 'true');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    if (burger && drawer && overlay) {
-      burger.addEventListener('click', () => {
-        drawer.classList.contains('fh__drawer--open') ? closeDrawer() : openDrawer();
-      });
-      overlay.addEventListener('click', closeDrawer);
-      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-      document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeDrawer();
-      });
-    }
-
-    /* ── Active link highlight ──────────────────────────── */
-    const page = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.fh__link, .fh__drawer-link').forEach(a => {
-      if (a.getAttribute('href') === page) {
-        a.classList.add('active');
-        a.setAttribute('aria-current', 'page');
-      }
-    });
-  });
-
-})();
+</div>`;document.addEventListener('DOMContentLoaded',function(){const hi=document.getElementById('site-header-inject');if(hi)hi.innerHTML=headerHTML;const fi=document.getElementById('site-footer-inject');if(fi)fi.innerHTML=footerHTML;const yr=document.getElementById('footer-year');if(yr)yr.textContent=new Date().getFullYear();const burger=document.getElementById('fh-burger');const drawer=document.getElementById('fh-drawer');const overlay=document.getElementById('fh-overlay');function openDrawer(){drawer.classList.add('fh__drawer--open');overlay.classList.add('fh__overlay--show');burger.setAttribute('aria-expanded','true');burger.setAttribute('aria-label','Close navigation menu');drawer.setAttribute('aria-hidden','false');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function closeDrawer(){drawer.classList.remove('fh__drawer--open');overlay.classList.remove('fh__overlay--show');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open navigation menu');drawer.setAttribute('aria-hidden','true');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+if(burger&&drawer&&overlay){burger.addEventListener('click',()=>{drawer.classList.contains('fh__drawer--open')?closeDrawer():openDrawer();});overlay.addEventListener('click',closeDrawer);drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrawer));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});}
+const page=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.fh__link, .fh__drawer-link').forEach(a=>{if(a.getAttribute('href')===page){a.classList.add('active');a.setAttribute('aria-current','page');}});});})();
